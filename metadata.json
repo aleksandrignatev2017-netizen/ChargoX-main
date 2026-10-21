@@ -1,0 +1,8 @@
+{
+  "name": "ChargoX — AI App & Website Builder",
+  "description": "Just type your idea and ChargoX builds, compiles, and runs live interactive apps on the right with real-time AI reasoning, code explorer, and instant preview.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

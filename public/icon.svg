@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0e14"/>
+      <stop offset="100%" stop-color="#141926"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <filter id="neon" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Squircle -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
+  <rect x="8" y="8" width="496" height="496" rx="120" fill="none" stroke="url(#glowGrad)" stroke-width="6" opacity="0.6"/>
+
+  <!-- Glowing Accent Star -->
+  <circle cx="390" cy="120" r="14" fill="#06b6d4" filter="url(#neon)"/>
+  
+  <!-- Stylized C -->
+  <path d="M 230 160 C 150 160 110 200 110 256 C 110 312 150 352 230 352 C 265 352 290 340 305 325" 
+        fill="none" 
+        stroke="url(#glowGrad)" 
+        stroke-width="48" 
+        stroke-linecap="round" 
+        filter="url(#neon)"/>
+
+  <!-- Stylized X -->
+  <line x1="285" y1="180" x2="400" y2="335" stroke="#ec4899" stroke-width="44" stroke-linecap="round" filter="url(#neon)"/>
+  <line x1="400" y1="180" x2="285" y2="335" stroke="#06b6d4" stroke-width="44" stroke-linecap="round" filter="url(#neon)"/>
+</svg>

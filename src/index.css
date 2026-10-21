@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  body {
+    background-color: #0d0f12;
+    color: #e5e7eb;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Iconic AI Studio radiant glow border for prompt box */
+.ai-glow-border {
+  position: relative;
+  border-radius: 1.25rem;
+  background: #13161c;
+}
+
+.ai-glow-border::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: calc(1.25rem + 1.5px);
+  padding: 1.5px;
+  background: linear-gradient(135deg, #3b82f6 0%, #ec4899 35%, #eab308 65%, #06b6d4 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.95;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.ai-glow-border:focus-within::before {
+  opacity: 1;
+  filter: drop-shadow(0 0 16px rgba(59, 130, 246, 0.45)) drop-shadow(0 0 24px rgba(236, 72, 153, 0.35));
+}
+
+.ai-glow-ambient {
+  box-shadow: 0 0 80px -20px rgba(59, 130, 246, 0.15), 0 0 80px -20px rgba(236, 72, 153, 0.12);
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

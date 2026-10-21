@@ -1,0 +1,14 @@
+{
+  "test-app-376kl": {
+    "id": "test-app-376kl",
+    "slug": "test-app",
+    "name": "Test App",
+    "prompt": "test",
+    "summary": "Deployed with ChargoX Auto-Deploy",
+    "html": "",
+    "status": "deleted",
+    "deployedAt": "2026-10-19T08:30:51.349Z",
+    "views": 1,
+    "deletedAt": "2026-10-19T08:30:59.745Z"
+  }
+}
