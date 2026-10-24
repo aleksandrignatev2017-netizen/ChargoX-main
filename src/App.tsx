@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
 import { HomeScreen } from './components/HomeScreen';
 import { StudioWorkspace } from './components/StudioWorkspace';
+import { ClaudeCodePanel } from './components/ClaudeCodePanel';
 import { SettingsModal } from './components/SettingsModal';
 import { GalleryModal } from './components/GalleryModal';
 import { GitHubImportModal } from './components/GitHubImportModal';
@@ -39,6 +40,7 @@ export default function App() {
   const [isBuilding, setIsBuilding] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [isCodeOpen, setIsCodeOpen] = useState(false);
   const [isGitHubModalOpen, setIsGitHubModalOpen] = useState(false);
   const [activeMode, setActiveMode] = useState<string>('Auto (Smart Model)');
   const [speedMode, setSpeedMode] = useState<SpeedMode>('auto');
@@ -469,6 +471,15 @@ export default function App() {
           onLaunchStudio={() => navigateTo('home')}
         />
       )}
+
+      <button
+        onClick={() => setIsCodeOpen(true)}
+        className="fixed bottom-4 right-4 z-40 flex items-center gap-2 rounded-full bg-cyan-500 px-4 py-3 text-sm font-bold text-black shadow-xl hover:bg-cyan-400"
+        style={{ marginBottom: 'env(safe-area-inset-bottom)' }}
+      >
+        &gt;_ Claude Code
+      </button>
+      <ClaudeCodePanel isOpen={isCodeOpen} onClose={() => setIsCodeOpen(false)} />
 
       <GalleryModal
         isOpen={isGalleryOpen}

@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 import { GoogleGenAI } from '@google/genai';
 import { createServer as createViteServer } from 'vite';
 import { generateAppFromPrompt } from './server/dynamicAppGenerator.js';
+import { registerLocalAgent } from './server/localAgent.js';
 
 dotenv.config();
 
@@ -2716,6 +2717,8 @@ app.get(['/live/:id', '/p/:id'], (req, res) => {
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   return res.send(html);
 });
+
+registerLocalAgent(app);
 
 // Server setup: Vite dev middleware in development or static in production
 async function startServer() {
